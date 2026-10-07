@@ -49,7 +49,7 @@ services:
     networks:
       - private_net
     healthcheck:
-      test: ["CMP-SHELL", "pg_isready -U myuser"]
+      test: ["CMD-SHELL", "pg_isready -U appuser -d appdb"]
       interval: 3s
       retries: 5
       start_period: 30s
